@@ -6,7 +6,7 @@ import (
 	"testing"
 )
 
-func TestSelectionSort(t *testing.T) {
+func TestQuickSort(t *testing.T) {
 	testsInt := []SortTest{
 		{"Sort variant 1", []int{6, 4, 10, 2, 3, 1}, []int{1, 2, 3, 4, 6, 10}},
 		{"Sort variant 2", []int{4, 1, 9, 6, 7}, []int{1, 4, 6, 7, 9}},
@@ -15,7 +15,7 @@ func TestSelectionSort(t *testing.T) {
 
 	for _, tt := range testsInt {
 		t.Run(tt.Name, func(t *testing.T) {
-			sorted_array := sort.SelectionSort(tt.Array)
+			sorted_array := sort.QuickSort(tt.Array, 0, len(tt.Array)-1)
 
 			if !reflect.DeepEqual(sorted_array, tt.Sorted) {
 				t.Errorf("Sort %v failed, result: %v, want %v", tt.Name, sorted_array, tt.Sorted)
