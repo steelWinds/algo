@@ -2,7 +2,7 @@ package tests
 
 import (
 	sortChecks "sort"
-	"steelWinds/algorithms/sort"
+	"steelWinds/algo/sort"
 	"testing"
 )
 

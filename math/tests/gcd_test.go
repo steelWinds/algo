@@ -1,7 +1,7 @@
 package tests
 
 import (
-	"steelWinds/algorithms/math"
+	"steelWinds/algo/math"
 	"testing"
 
 	testMath "github.com/petr-korobeinikov/golang-example/math"

@@ -1,4 +1,4 @@
-module steelWinds/algorithms
+module steelWinds/algo
 
 go 1.20
 
