@@ -3,27 +3,29 @@ package tests
 import (
 	"steelWinds/algorithms/math"
 	"testing"
+
+	testMath "github.com/petr-korobeinikov/golang-example/math"
 )
 
-type SearchTest struct {
-	Name    string
-	Numbers []int
-	Want    float64
+type GcdTest struct {
+	Name     string
+	Operands [2]int
+	Want     float64
 }
 
 func TestBinarySearch(t *testing.T) {
-	testsCases := []SearchTest{
-		{"Gcd test 1 with 24 with 9", []int{24, 9}, 3},
-		{"Gcd test 2 with 45 with 11", []int{45, 11}, 1},
-		{"Gcd test 3 with 102 with 54", []int{102, 54}, 6},
+	testsCases := []GcdTest{
+		{"Gcd test 1 with 24 with 9", [2]int{24, 9}, 3},
+		{"Gcd test 2 with 45 with 11", [2]int{45, 11}, 1},
+		{"Gcd test 3 with 102 with 54", [2]int{102, 54}, 6},
 	}
 
 	for _, tt := range testsCases {
 		t.Run(tt.Name, func(t *testing.T) {
-			gcd := math.Gcd(tt.Numbers[0], tt.Numbers[1])
+			gcd := math.Gcd(tt.Operands[0], tt.Operands[1])
 
 			if gcd != tt.Want {
-				t.Error("Test failed")
+				t.Errorf("Gcd test failed, got %v, want %v", gcd, testMath.GCDRemainder(tt.Operands[0], tt.Operands[1]))
 			}
 		})
 	}
