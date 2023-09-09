@@ -16,6 +16,7 @@ var rn = rand.New(rand.NewSource(time.Now().Unix()))
 var array = rn.Perm(10000)
 var lenArray = len(array)
 
+// For just arrays
 var SearchTestVariants = []SearchTest{
 	{"Sort 100 els", array, array[rn.Intn(lenArray)]},
 	{"Sort 1000 els", array, array[rn.Intn(lenArray)]},
